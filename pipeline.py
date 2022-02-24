@@ -59,7 +59,7 @@ if not WGET_AT:
 #
 # Update this each time you make a non-cosmetic change.
 # It will be added to the WARC files and reported to the tracker.
-VERSION = '20220224.04'
+VERSION = '20220224.05'
 USER_AGENT = 'Archive Team'
 TRACKER_ID = 'suspilne'
 TRACKER_HOST = 'legacy-api.arpa.li'
@@ -253,7 +253,7 @@ pipeline = Pipeline(
     PrepareDirectories(warc_prefix=TRACKER_ID),
     WgetDownload(
         WgetArgs(),
-        max_tries=2,
+        max_tries=1,
         accept_on_exit_code=[0, 4, 8],
         env={
             'item_dir': ItemValue('item_dir'),

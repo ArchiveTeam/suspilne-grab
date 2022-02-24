@@ -196,7 +196,8 @@ wget.callbacks.get_urls = function(file, url, is_css, iri)
   end
 
   if allowed(url) and status_code < 300
-    and not string.match(url, "/uploads/video/") then
+    and not string.match(url, "/uploads/video/")
+    and not string.match(url, "/uploads/news/") then
     html = read_file(file)
     if (string.match(url, "^https?://tv%.suspilne%.media/video/[0-9]+/load$") and item_type == "video")
       or (string.match(url, "^https?://tv%.suspilne%.media/news/[0-9]+$") and item_type == "news-video") then
