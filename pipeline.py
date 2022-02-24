@@ -234,7 +234,7 @@ class WgetArgs(object):
             if item_type == 'video':
                 wget_args.extend(['--warc-header', 'suspilne-video: '+item_value])
                 wget_args.append('https://tv.suspilne.media/video/{}/load'.format(item_value))
-            if item_type == 'news-video':
+            elif item_type == 'news-video':
                 wget_args.extend(['--warc-header', 'suspilne-news-video: '+item_value])
                 wget_args.append('https://tv.suspilne.media/news/'+item_value)
             else:
